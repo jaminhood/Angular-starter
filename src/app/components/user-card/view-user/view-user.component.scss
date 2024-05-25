@@ -1,0 +1,49 @@
+@import "../../../../mixins";
+
+.view-user {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(44, 44, 44, 0.851);
+  }
+
+  &__btn {
+    @include btn-cls;
+  }
+
+  &__inner {
+    position: relative;
+    padding: 2rem;
+    background: #fff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 1rem;
+    display: flex;
+    gap: 2rem;
+
+    &>* {
+      flex: 1;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+
+    &--img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

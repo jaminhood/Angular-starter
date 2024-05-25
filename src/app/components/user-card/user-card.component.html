@@ -1,0 +1,22 @@
+<div class="user">
+  <div class="user__image">
+    <img [src]="user.avatar" [alt]="user.name" class="user__image--img" />
+  </div>
+  <div>
+    <h3 class="user__name">{{ user.name }}</h3>
+    <p class="user__role">{{ user.email }} | {{ user.role }}</p>
+    <button (click)="viewUser()" class="user__btn user__btn--delete">
+      View
+    </button>
+    <button (click)="tryDelete()" class="user__btn user__btn--delete">
+      Delete
+    </button>
+  </div>
+</div>
+<confirm-user-delete
+  *ngIf="deleting"
+  [user]="user"
+  (confirmed)="$event == true && delete()"
+  [(deleting)]="deleting"
+></confirm-user-delete>
+<view-user *ngIf="inView" [user]="user" [(inView)]="inView"></view-user>

@@ -1,0 +1,14 @@
+<h1>Register Form</h1>
+<form #login="ngForm" (ngSubmit)="submit()">
+  <div class="form__group">
+    <label for="name">Name</label>
+    <input type="text" id="name" class="form__control" name="name" ngModel />
+  </div>
+  <div class="form__group">
+    <label for="email">Email</label>
+    <input type="text" id="email" class="form__control" name="email" ngModel />
+  </div>
+  <div class="form__group">
+    <button type="submit">Submit</button>
+  </div>
+</form>

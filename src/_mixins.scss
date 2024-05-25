@@ -1,0 +1,10 @@
+@mixin btn-cls($bg: #00a, $color: #fff) {
+  padding: .7rem 1.5rem;
+  border: none;
+  background: $bg;
+  margin-top: 1rem;
+  color: $color;
+  letter-spacing: .1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}

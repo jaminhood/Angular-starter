@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Users</h1>
+  <div class="users-grid">
+    <user-card
+      *ngFor="let user of users"
+      [user]="user"
+      (deleteUser)="deleteUser($event)"
+    ></user-card>
+  </div>
+</div>

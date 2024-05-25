@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(217, 215, 215);
+  font-family: 'poppins', sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-cls {
+  padding: .7rem 1.5rem;
+  border: none;
+  background: #00a;
+  margin-top: 1rem;
+  color: #fff;
+  letter-spacing: .1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}
