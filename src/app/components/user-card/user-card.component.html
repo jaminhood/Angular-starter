@@ -19,4 +19,6 @@
   (confirmed)="$event == true && delete()"
   [(deleting)]="deleting"
 ></confirm-user-delete>
-<view-user *ngIf="inView" [user]="user" [(inView)]="inView"></view-user>
+<view-user
+  *ngIf="currentUserId != undefined && currentUserId == user.id"
+></view-user>

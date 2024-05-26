@@ -10,15 +10,12 @@ export const getUsersError = createAction(
   props<{ error: string }>()
 );
 
+export const setUser = createAction(
+  `[User Card Component] set single user`,
+  props<{ id: string | number | null }>()
+);
+
 export const deleteUser = createAction(
   `[Users Component] delete User`,
   props<{ id: string | number }>()
-);
-export const deleteUsersSuccess = createAction(
-  `[Users Component] delete Success`,
-  props<{ users: GetUsersContract }>()
-);
-export const deleteUsersError = createAction(
-  `[Users Component] delete Error`,
-  props<{ error: string }>()
 );

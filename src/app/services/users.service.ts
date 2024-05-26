@@ -12,7 +12,8 @@ export class UsersService {
     return this.apiService.get<GetUsersContract>(`users`);
   };
 
-  public delete = (id: string | number): Observable<any> => {
-    return this.apiService.delete(`users/${id}`);
+  public delete = async <T>(id: T): Promise<Observable<T>> => {
+    console.log(id);
+    return await this.apiService.delete(`users/${id}`);
   };
 }

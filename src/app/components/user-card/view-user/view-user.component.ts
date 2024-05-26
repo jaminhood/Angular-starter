@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { setUser } from '../../../stste/user/user.actions';
+import userFeature from '../../../stste/user/user.feature';
 
 @Component({
   selector: 'view-user',
@@ -9,11 +12,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './view-user.component.scss',
 })
 export class ViewUserComponent {
-  // inputs
-  @Input() inView?: boolean;
-  @Input() user!: UserContract;
-  // output
-  @Output() inViewChange = new EventEmitter<boolean>();
-  // cancel user deletion
-  protected close = () => this.inViewChange.emit(false);
+  protected user$: UserContract | null = null;
+  // constructor
+  public constructor(private store: Store) {
+    this.store
+      .select(userFeature.selectActiveUser)
+      .subscribe((user) => (this.user$ = user));
+  }
+  protected close = () => this.store.dispatch(setUser({ id: null }));
 }
