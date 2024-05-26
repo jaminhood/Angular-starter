@@ -9,7 +9,7 @@ export class UsersService {
   public constructor(private apiService: ApiService) {}
 
   public getAll = (): Observable<GetUsersContract> => {
-    return this.apiService.get(`users`);
+    return this.apiService.get<GetUsersContract>(`users`);
   };
 
   public delete = (id: string | number): Observable<any> => {

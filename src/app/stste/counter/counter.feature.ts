@@ -1,4 +1,4 @@
-import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
+import { createFeature, createReducer, on } from '@ngrx/store';
 import { decrement, increment, reset } from './counter.actions';
 import { CounterActionEnum } from './counter.enum';
 
